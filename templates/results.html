@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for track in tracks %}
+        <li>
+            <a href="{{ url_for('play_track', track_id=track['id']) }}">
+                {{ track['name'] }} by {{ track['artists'][0]['name'] }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to search</a>
+</body>
+</html>
